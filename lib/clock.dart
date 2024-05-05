@@ -55,7 +55,7 @@ class _clock extends State<clock> {
         children: [
           Text(
             '$_secondsRemaining วินาที',
-            style: TextStyle(fontSize: 50),
+            style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 0, 0, 0)),
           ),
           SizedBox(height: 100),
           Row(
@@ -71,7 +71,8 @@ class _clock extends State<clock> {
                 },
                 child: Text(
                   'เริ่ม',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(
+                      fontSize: 30, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
               SizedBox(width: 20),
@@ -83,7 +84,9 @@ class _clock extends State<clock> {
                     _isRunning = false;
                   }
                 },
-                child: Text('หยุด', style: TextStyle(fontSize: 30)),
+                child: Text('หยุด',
+                    style: TextStyle(
+                        fontSize: 30, color: Color.fromARGB(255, 0, 0, 0))),
               ),
               SizedBox(width: 20),
               ElevatedButton(
@@ -92,7 +95,9 @@ class _clock extends State<clock> {
                   _resetTimer();
                   _isRunning = false;
                 },
-                child: Text('รีเซ็ต', style: TextStyle(fontSize: 30)),
+                child: Text('รีเซ็ต',
+                    style: TextStyle(
+                        fontSize: 30, color: Color.fromARGB(255, 0, 0, 0))),
               ),
             ],
           ),
@@ -101,7 +106,8 @@ class _clock extends State<clock> {
             style: TextStyle(fontSize: 30),
             decoration: InputDecoration(
                 labelText: 'เวลานับถอยหลัง (วินาที)',
-                labelStyle: TextStyle(fontSize: 20)),
+                labelStyle: TextStyle(
+                    fontSize: 20, color: Color.fromARGB(255, 0, 0, 0))),
             keyboardType: TextInputType.number,
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
