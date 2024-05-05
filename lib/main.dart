@@ -38,10 +38,21 @@ class _HomePageState extends State<homePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month), label: 'ปฏิทิน'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'สุภาษิต'),
-          BottomNavigationBarItem(icon: Icon(Icons.front_hand), label: 'บทสวด'),
-          BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'นาฬิกา')
+              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              icon: Icon(Icons.calendar_month),
+              label: 'ปฏิทิน'),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              icon: Icon(Icons.message),
+              label: 'สุภาษิต'),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              icon: Icon(Icons.front_hand),
+              label: 'บทสวด'),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              icon: Icon(Icons.timer),
+              label: 'นาฬิกา')
         ],
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),

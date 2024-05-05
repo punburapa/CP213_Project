@@ -138,7 +138,7 @@ class _Mybodsuad extends State<bodsuad> {
                           children: <Widget>[
                             const Text(
                                 style: TextStyle(
-                                    fontSize: 25,
+                                    fontSize: 23,
                                     color: Color.fromARGB(251, 3, 2, 2)),
                                 '''
 มะยัง ภันเต วิสุง วิสุง รักขะนัตถายะ 
