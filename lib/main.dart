@@ -1,6 +1,7 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:test2/clock.dart';
 import 'supasit.dart';
 
 import 'bodsuad.dart';
@@ -30,7 +31,7 @@ class homePage extends StatefulWidget {
 
 class _HomePageState extends State<homePage> {
   int currentIndex = 0;
-  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad(), Text('นาฬิกา')];
+  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad(), Example()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +39,19 @@ class _HomePageState extends State<homePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              backgroundColor: Color.fromARGB(235, 101, 95, 28),
               icon: Icon(Icons.calendar_month),
               label: 'ปฏิทิน'),
           BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              backgroundColor: Color.fromARGB(235, 101, 95, 28),
               icon: Icon(Icons.message),
               label: 'สุภาษิต'),
           BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              backgroundColor: Color.fromARGB(235, 101, 95, 28),
               icon: Icon(Icons.front_hand),
               label: 'บทสวด'),
           BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(236, 217, 236, 76),
+              backgroundColor: Color.fromARGB(235, 101, 95, 28),
               icon: Icon(Icons.timer),
               label: 'นาฬิกา')
         ],
