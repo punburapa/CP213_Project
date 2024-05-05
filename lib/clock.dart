@@ -98,7 +98,10 @@ class _clock extends State<clock> {
           ),
           SizedBox(height: 100),
           TextFormField(
-            decoration: InputDecoration(labelText: 'เวลานับถอยหลัง (วินาที)'),
+            style: TextStyle(fontSize: 30),
+            decoration: InputDecoration(
+                labelText: 'เวลานับถอยหลัง (วินาที)',
+                labelStyle: TextStyle(fontSize: 20)),
             keyboardType: TextInputType.number,
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
