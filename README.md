@@ -1,3 +1,1 @@
-# test2
-
-A new Flutter project.
+# CP213 Mobile Programming Project
