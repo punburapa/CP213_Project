@@ -30,7 +30,7 @@ class homePage extends StatefulWidget {
 
 class _HomePageState extends State<homePage> {
   int currentIndex = 0;
-  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad()];
+  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad(), Text('นาฬิกา')];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,8 @@ class _HomePageState extends State<homePage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.calendar_month), label: 'ปฏิทิน'),
           BottomNavigationBarItem(icon: Icon(Icons.message), label: 'สุภาษิต'),
-          BottomNavigationBarItem(icon: Icon(Icons.front_hand), label: 'บทสวด')
+          BottomNavigationBarItem(icon: Icon(Icons.front_hand), label: 'บทสวด'),
+          BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'นาฬิกา')
         ],
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
