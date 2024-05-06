@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:js_util';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,6 +12,7 @@ class _clock extends State<clock> {
   late Timer _timer;
   int _secondsRemaining = 0;
   bool _isRunning = false;
+  int _inputSeconds = 0;
 
   @override
   void initState() {
@@ -38,7 +40,7 @@ class _clock extends State<clock> {
 
   void _resetTimer() {
     setState(() {
-      _secondsRemaining = 0;
+      _secondsRemaining = _inputSeconds;
       _isRunning = false;
     });
   }
@@ -118,7 +120,8 @@ class _clock extends State<clock> {
             ],
             onChanged: (value) {
               setState(() {
-                _secondsRemaining = (int.tryParse(value) ?? 0) * 60;
+                _inputSeconds = (int.tryParse(value) ?? 0) * 60;
+                _secondsRemaining = _inputSeconds;
               });
             },
           ),
