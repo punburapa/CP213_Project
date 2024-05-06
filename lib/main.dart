@@ -1,7 +1,7 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'myCalendar.dart';
+import 'calendar.dart';
 import 'clock.dart';
 import 'supasit.dart';
 import 'bodsuad.dart';
@@ -32,7 +32,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List widgetOptions = [
-    MyCalendar(),
+    BuddistCalendar(),
     const supasit(),
     const bodsuad(),
     clock()
