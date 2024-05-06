@@ -57,7 +57,7 @@ class _clock extends State<clock> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '$_secondsRemaining วินาที',
+            '$_secondsRemaining  วินาที',
             style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 0, 0, 0)),
           ),
           SizedBox(height: 100),
@@ -109,7 +109,7 @@ class _clock extends State<clock> {
           TextFormField(
             style: TextStyle(fontSize: 30),
             decoration: InputDecoration(
-                labelText: 'เวลานับถอยหลัง (วินาที)',
+                labelText: 'เวลานับถอยหลัง (นาที)',
                 labelStyle: TextStyle(
                     fontSize: 20, color: Color.fromARGB(255, 0, 0, 0))),
             keyboardType: TextInputType.number,
@@ -118,7 +118,7 @@ class _clock extends State<clock> {
             ],
             onChanged: (value) {
               setState(() {
-                _secondsRemaining = int.tryParse(value) ?? 0;
+                _secondsRemaining = (int.tryParse(value) ?? 0) * 60;
               });
             },
           ),
