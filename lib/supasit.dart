@@ -201,8 +201,7 @@ class _Mysupasit extends State<supasit> {
 }
 
 final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    minimumSize: Size(400, 70),
-    primary: Color.fromARGB(255, 239, 204, 29),
+    minimumSize: Size(400, 70), backgroundColor: Color.fromARGB(255, 239, 204, 29),
     elevation: 0,
     shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(50))));

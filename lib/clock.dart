@@ -129,8 +129,7 @@ class _clock extends State<clock> {
 }
 
 final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    minimumSize: Size(20, 70),
-    primary: Color.fromARGB(255, 239, 204, 29),
+    minimumSize: Size(20, 70), backgroundColor: Color.fromARGB(255, 239, 204, 29),
     elevation: 0,
     shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(50))));
