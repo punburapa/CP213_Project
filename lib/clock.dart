@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,10 +15,11 @@ class _clock extends State<clock> {
   @override
   void initState() {
     super.initState();
+    _timer = Timer(const Duration(seconds: 0), () {});
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (_) {
       setState(() {
         if (_secondsRemaining > 0) {
           _secondsRemaining--;
@@ -28,15 +28,18 @@ class _clock extends State<clock> {
         }
       });
     });
+    _isRunning = true;
   }
 
   void _stopTimer() {
     _timer.cancel();
+    _isRunning = false;
   }
 
   void _resetTimer() {
     setState(() {
       _secondsRemaining = 0;
+      _isRunning = false;
     });
   }
 
