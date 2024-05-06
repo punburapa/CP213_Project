@@ -1,9 +1,9 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:test2/clock.dart';
+import 'myCalendar.dart';
+import 'clock.dart';
 import 'supasit.dart';
-
 import 'bodsuad.dart';
 
 void main() {
@@ -17,21 +17,26 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: homePage(),
+      home: HomePage(),
     );
   }
 }
 
-class homePage extends StatefulWidget {
-  const homePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<homePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<homePage> {
+class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad(), clock()];
+  List widgetOptions = [
+    MyCalendar(),
+    const supasit(),
+    const bodsuad(),
+    clock()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
