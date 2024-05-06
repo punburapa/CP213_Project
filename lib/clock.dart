@@ -49,7 +49,7 @@ class _clock extends State<clock> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -61,6 +61,7 @@ class _clock extends State<clock> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(width: 10),
               ElevatedButton(
                 style: buttonStyle,
                 onPressed: () {
@@ -72,10 +73,10 @@ class _clock extends State<clock> {
                 child: Text(
                   'เริ่ม',
                   style: TextStyle(
-                      fontSize: 30, color: Color.fromARGB(255, 0, 0, 0)),
+                      fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 10),
               ElevatedButton(
                 style: buttonStyle,
                 onPressed: () {
@@ -86,9 +87,9 @@ class _clock extends State<clock> {
                 },
                 child: Text('หยุด',
                     style: TextStyle(
-                        fontSize: 30, color: Color.fromARGB(255, 0, 0, 0))),
+                        fontSize: 20, color: Color.fromARGB(255, 0, 0, 0))),
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 10),
               ElevatedButton(
                 style: buttonStyle,
                 onPressed: () {
@@ -97,7 +98,7 @@ class _clock extends State<clock> {
                 },
                 child: Text('รีเซ็ต',
                     style: TextStyle(
-                        fontSize: 30, color: Color.fromARGB(255, 0, 0, 0))),
+                        fontSize: 20, color: Color.fromARGB(255, 0, 0, 0))),
               ),
             ],
           ),
