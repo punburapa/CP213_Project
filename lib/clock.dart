@@ -12,7 +12,7 @@ class _clock extends State<clock> {
   late Timer _timer;
   int _secondsRemaining = 0;
   bool _isRunning = false;
-  int _inputSeconds = 0;
+  int _inputmin = 0;
 
   @override
   void initState() {
@@ -40,7 +40,7 @@ class _clock extends State<clock> {
 
   void _resetTimer() {
     setState(() {
-      _secondsRemaining = _inputSeconds;
+      _secondsRemaining = _inputmin;
       _isRunning = false;
     });
   }
@@ -53,13 +53,15 @@ class _clock extends State<clock> {
 
   @override
   Widget build(BuildContext context) {
+    int minutes = _secondsRemaining ~/ 60;
+    int seconds = _secondsRemaining % 60;
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '$_secondsRemaining  วินาที',
+            '$minutes นาที:$seconds  วินาที',
             style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 0, 0, 0)),
           ),
           SizedBox(height: 100),
@@ -120,8 +122,8 @@ class _clock extends State<clock> {
             ],
             onChanged: (value) {
               setState(() {
-                _inputSeconds = (int.tryParse(value) ?? 0) * 60;
-                _secondsRemaining = _inputSeconds;
+                _inputmin = (int.tryParse(value) ?? 0) * 60;
+                _secondsRemaining = _inputmin;
               });
             },
           ),
