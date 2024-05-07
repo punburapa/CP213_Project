@@ -131,6 +131,7 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
   Widget content() {
     return Column(
       children: [
+        SizedBox(height: 20.0),
         Image.asset('assets/img/lotus_1.png'),
         Container(
           child: TableCalendar(

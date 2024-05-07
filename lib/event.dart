@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Event {
   final String eventName;
 
@@ -8,5 +6,9 @@ class Event {
   @override
   String toString() {
     return eventName;
+  }
+
+  DateTime nextDate() {
+    return DateTime.now();
   }
 }
