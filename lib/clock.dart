@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:js_util';
+// import 'dart:js_util';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -100,6 +100,7 @@ class _clock extends State<clock> {
               ElevatedButton(
                 style: buttonStyle,
                 onPressed: () {
+                  _stopTimer();
                   _resetTimer();
                   _isRunning = false;
                 },
@@ -135,7 +136,7 @@ class _clock extends State<clock> {
 
 final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     minimumSize: Size(20, 70),
-    primary: Color.fromARGB(255, 239, 204, 29),
+    backgroundColor: Color.fromARGB(255, 239, 204, 29),
     elevation: 0,
     shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(50))));
