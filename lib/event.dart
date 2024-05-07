@@ -11,4 +11,7 @@ class Event {
   DateTime nextDate() {
     return DateTime.now();
   }
+
+  void update(DateTime dateTime, Function(dynamic value) param1,
+      {required List<Event> Function() ifAbsent}) {}
 }

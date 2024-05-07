@@ -1,11 +1,11 @@
 // import 'dart:html';
 import 'dart:convert';
 import 'dart:io';
-import 'package:icalendar_parser/icalendar_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:table_calendar/table_calendar.dart';
 import 'event.dart';
+import 'package:intl/intl.dart';
 import 'dart:developer' as developer;
 
 class BuddistCalendar extends StatefulWidget {
@@ -21,18 +21,36 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
   Map<DateTime, List<Event>> events = {};
   TextEditingController _eventController = TextEditingController();
   late final ValueNotifier<List<Event>> _selectedEvent;
+  late Future<List<dynamic>> _futureData;
 
   @override
   void initState() {
     super.initState();
     _selectedDay = today;
     _selectedEvent = ValueNotifier(_getEventsForDay(_selectedDay!));
-    _loadMockData();
-    developer.log('test');
-    // _loadJsonData();
+    // _loadMockData();
+    _loadJsonData();
   }
 
-  void _loadJsonData() {}
+  Future<void> _loadJsonData() async {
+    final String data =
+        await rootBundle.loadString('assets/buddhist_holiday3.json');
+    final List<dynamic> jsonData = jsonDecode(data);
+    for (var item in jsonData) {
+      final DateTime date = DateTime.parse(item['DTSTART;VALUE=DATE']);
+      final String desc = item['DESCRIPTION'];
+      developer.log(desc);
+      developer.log(date.toString());
+
+      events.update(date, (value) {
+        value.add(Event(desc));
+        return value;
+      }, ifAbsent: () => [Event(desc)]);
+    }
+    // developer.log(events)
+
+    setState(() {});
+  }
 
   void _loadMockData() {
     events.update(DateTime.utc(2024, 05, 15), (value) {

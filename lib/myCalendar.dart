@@ -1,120 +1,120 @@
-import 'dart:convert';
-import 'dart:io';
+// import 'dart:convert';
+// import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:icalendar_parser/icalendar_parser.dart';
-import 'package:table_calendar/table_calendar.dart';
+// import 'package:flutter/material.dart';
+// import 'package:icalendar_parser/icalendar_parser.dart';
+// import 'package:table_calendar/table_calendar.dart';
 
-import 'event.dart';
+// import 'event.dart';
 
-// Future<ICalendar> loadAndParseCalendar() async {
-//   final icsString = await rootBundle.loadString('assets/your_file.ics');
-//   final iCalendar = ICalendar.fromString(icsString);
-//   return iCalendar;
+// // Future<ICalendar> loadAndParseCalendar() async {
+// //   final icsString = await rootBundle.loadString('assets/your_file.ics');
+// //   final iCalendar = ICalendar.fromString(icsString);
+// //   return iCalendar;
+// // }
+
+// class MyCalendar extends StatefulWidget {
+//   const MyCalendar({super.key});
+
+//   @override
+//   State<MyCalendar> createState() => _MyCalendarState();
 // }
 
-class MyCalendar extends StatefulWidget {
-  const MyCalendar({super.key});
+// class _MyCalendarState extends State<MyCalendar> {
+//   CalendarFormat _calendarFormat = CalendarFormat.month;
+//   late final ValueNotifier<List<Event>> _selectedEvents;
+//   DateTime _focusedDay = DateTime.now();
+//   DateTime? _selectedDay;
+//   Map<DateTime, List<Event>> events = {};
 
-  @override
-  State<MyCalendar> createState() => _MyCalendarState();
-}
+//   //test add events
 
-class _MyCalendarState extends State<MyCalendar> {
-  CalendarFormat _calendarFormat = CalendarFormat.month;
-  late final ValueNotifier<List<Event>> _selectedEvents;
-  DateTime _focusedDay = DateTime.now();
-  DateTime? _selectedDay;
-  Map<DateTime, List<Event>> events = {};
+//   void initState() {
+//     super.initState();
 
-  //test add events
+//     _selectedDay = _focusedDay;
+//     _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
+//     final icsObj =
+//         ICalendar.fromLines(File('assets/my_file.ics').readAsLinesSync());
+//     print(jsonEncode(icsObj.toJson()));
 
-  void initState() {
-    super.initState();
+//     // Add a test event
+//     events[_selectedDay!] = [Event('Test Event')];
+//   }
 
-    _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
-    final icsObj =
-        ICalendar.fromLines(File('assets/my_file.ics').readAsLinesSync());
-    print(jsonEncode(icsObj.toJson()));
+//   void dispose() {
+//     _selectedEvents.dispose();
+//     super.dispose();
+//   }
 
-    // Add a test event
-    events[_selectedDay!] = [Event('Test Event')];
-  }
+//   List<Event> _getEventsForDay(DateTime day) {
+//     return events[day] ?? [];
+//   }
 
-  void dispose() {
-    _selectedEvents.dispose();
-    super.dispose();
-  }
+//   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
+//     if (!isSameDay(_selectedDay, selectedDay)) {
+//       setState(() {
+//         _selectedDay = selectedDay;
+//         _focusedDay = focusedDay;
+//       });
 
-  List<Event> _getEventsForDay(DateTime day) {
-    return events[day] ?? [];
-  }
+//       _selectedEvents.value = _getEventsForDay(selectedDay);
+//     }
+//   }
 
-  void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
-    if (!isSameDay(_selectedDay, selectedDay)) {
-      setState(() {
-        _selectedDay = selectedDay;
-        _focusedDay = focusedDay;
-      });
-
-      _selectedEvents.value = _getEventsForDay(selectedDay);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          TableCalendar(
-            rowHeight: 45,
-            headerStyle:
-                HeaderStyle(formatButtonVisible: false, titleCentered: true),
-            availableGestures: AvailableGestures.all,
-            selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
-            eventLoader: _getEventsForDay,
-            focusedDay: _focusedDay,
-            firstDay: DateTime.utc(2010, 10, 26),
-            lastDay: DateTime.utc(2030, 10, 26),
-            onDaySelected: _onDaySelected,
-            onPageChanged: (focusedDay) {
-              _focusedDay = focusedDay;
-            },
-          ),
-          // ElevatedButton(
-          //     onPressed: () {
-          //       events.addAll({
-          //         _selectedDay!: [Event("Test")]
-          //       });
-          //       // Navigator.of(context).pop;
-          //       _selectedEvents.value =
-          //           _getEventsForDay(DateTime.utc(2024, 05, 15));
-          //     },
-          //     child: Text("Yay")),
-          ValueListenableBuilder<List<Event>>(
-              valueListenable: _selectedEvents,
-              builder: (context, value, _) {
-                return ListView.builder(
-                    itemCount: value.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ListTile(
-                            onTap: () => print('${value[index]}'),
-                            title: Text('${value[index]}')),
-                      );
-                    });
-              })
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return SafeArea(
+//       child: Column(
+//         children: [
+//           TableCalendar(
+//             rowHeight: 45,
+//             headerStyle:
+//                 HeaderStyle(formatButtonVisible: false, titleCentered: true),
+//             availableGestures: AvailableGestures.all,
+//             selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+//             eventLoader: _getEventsForDay,
+//             focusedDay: _focusedDay,
+//             firstDay: DateTime.utc(2010, 10, 26),
+//             lastDay: DateTime.utc(2030, 10, 26),
+//             onDaySelected: _onDaySelected,
+//             onPageChanged: (focusedDay) {
+//               _focusedDay = focusedDay;
+//             },
+//           ),
+//           // ElevatedButton(
+//           //     onPressed: () {
+//           //       events.addAll({
+//           //         _selectedDay!: [Event("Test")]
+//           //       });
+//           //       // Navigator.of(context).pop;
+//           //       _selectedEvents.value =
+//           //           _getEventsForDay(DateTime.utc(2024, 05, 15));
+//           //     },
+//           //     child: Text("Yay")),
+//           ValueListenableBuilder<List<Event>>(
+//               valueListenable: _selectedEvents,
+//               builder: (context, value, _) {
+//                 return ListView.builder(
+//                     itemCount: value.length,
+//                     itemBuilder: (context, index) {
+//                       return Container(
+//                         margin: EdgeInsets.symmetric(
+//                           horizontal: 12,
+//                           vertical: 4,
+//                         ),
+//                         decoration: BoxDecoration(
+//                           border: Border.all(),
+//                           borderRadius: BorderRadius.circular(12),
+//                         ),
+//                         child: ListTile(
+//                             onTap: () => print('${value[index]}'),
+//                             title: Text('${value[index]}')),
+//                       );
+//                     });
+//               })
+//         ],
+//       ),
+//     );
+//   }
+// }
