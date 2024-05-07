@@ -31,7 +31,12 @@ class homePage extends StatefulWidget {
 
 class _HomePageState extends State<homePage> {
   int currentIndex = 0;
-  List widgetOptions = [Text('ปฏิทิน'), supasit(), bodsuad(), Example()];
+  List widgetOptions = [
+    const Text('ปฏิทิน'),
+    const supasit(),
+    const bodsuad(),
+    clock()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
