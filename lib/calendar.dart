@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:table_calendar/table_calendar.dart';
 import 'event.dart';
+import 'dart:developer' as developer;
 
 class BuddistCalendar extends StatefulWidget {
   const BuddistCalendar({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
     _selectedDay = today;
     _selectedEvent = ValueNotifier(_getEventsForDay(_selectedDay!));
     _loadMockData();
+    developer.log('test');
     // _loadJsonData();
   }
 
@@ -88,39 +90,39 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    scrollable: true,
-                    title: Text("Event Name"),
-                    content: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: TextField(
-                        controller: _eventController,
-                      ),
-                    ),
-                    actions: [
-                      ElevatedButton(
-                        onPressed: () {
-                          events.update(_selectedDay!, (value) {
-                            value.add(Event(_eventController.text));
-                            return value;
-                          }, ifAbsent: () => [Event(_eventController.text)]);
-                          Navigator.of(context).pop();
-                          _selectedEvent.value =
-                              _getEventsForDay(_selectedDay!);
-                        },
-                        child: Text("Submit"),
-                      )
-                    ],
-                  );
-                });
-          },
-          child: const Icon(Icons.add),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     showDialog(
+        //         context: context,
+        //         builder: (context) {
+        //           return AlertDialog(
+        //             scrollable: true,
+        //             title: Text("Event Name"),
+        //             content: Padding(
+        //               padding: EdgeInsets.all(8),
+        //               child: TextField(
+        //                 controller: _eventController,
+        //               ),
+        //             ),
+        //             actions: [
+        //               ElevatedButton(
+        //                 onPressed: () {
+        //                   events.update(_selectedDay!, (value) {
+        //                     value.add(Event(_eventController.text));
+        //                     return value;
+        //                   }, ifAbsent: () => [Event(_eventController.text)]);
+        //                   Navigator.of(context).pop();
+        //                   _selectedEvent.value =
+        //                       _getEventsForDay(_selectedDay!);
+        //                 },
+        //                 child: Text("Submit"),
+        //               )
+        //             ],
+        //           );
+        //         });
+        //   },
+        //   child: const Icon(Icons.add),
+        // ),
         body: content(),
       ),
     );
@@ -129,6 +131,7 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
   Widget content() {
     return Column(
       children: [
+        Image.asset('assets/img/lotus_1.png'),
         Container(
           child: TableCalendar(
             locale: "en_US",
@@ -139,7 +142,7 @@ class _BuddistCalendarState extends State<BuddistCalendar> {
             selectedDayPredicate: (day) => isSameDay(day, today),
             focusedDay: DateTime.now(),
             firstDay: DateTime.utc(2020, 10, 16),
-            lastDay: DateTime.utc(2040, 3, 14),
+            lastDay: DateTime.utc(2056, 10, 16),
             onDaySelected: _onDaySelected,
             eventLoader: _getEventsForDay,
           ),
