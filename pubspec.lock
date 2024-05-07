@@ -89,6 +89,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  date_count_down:
+    dependency: "direct main"
+    description:
+      name: date_count_down
+      sha256: "89b87807a8307c03e0ee25e60175fe86667c9e8e1231032b4d4e76389fb95c80"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -102,6 +110,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_event_calendar:
+    dependency: "direct main"
+    description:
+      name: flutter_event_calendar
+      sha256: f5b6f22ae01c24a1fc3f6432d3080130bb40efc976e53941b5f6422b6a4f9d64
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -123,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.7"
+  icalendar_parser:
+    dependency: "direct main"
+    description:
+      name: icalendar_parser
+      sha256: "64121bec198c01fcdd5d1247baf2042593f1a418c2dcf331099b662a8a462df4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   image:
     dependency: transitive
     description:
@@ -131,6 +155,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.7"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.19.0"
   json_annotation:
     dependency: transitive
     description:
@@ -211,6 +243,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.7"
+  scoped_model:
+    dependency: transitive
+    description:
+      name: scoped_model
+      sha256: "8dacc77cb5de78d5e159d54cab883847491a73dfaa3d28c52f4ec8b0be32645b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  shamsi_date:
+    dependency: transitive
+    description:
+      name: shamsi_date
+      sha256: "5df195a0b7794b7d4a8dc9321244400147896def157b7530c5b8a2f9cfc6a7a4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.0"
+  simple_gesture_detector:
+    dependency: transitive
+    description:
+      name: simple_gesture_detector
+      sha256: ba2cd5af24ff20a0b8d609cec3f40e5b0744d2a71804a2616ae086b9c19d19a3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -248,6 +304,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_calendar:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_calendar
+      sha256: "9f26ec19fb2f4f018a7512d02dee619a485aac6c89e77fe315b1b66076fc5b40"
+      url: "https://pub.dev"
+    source: hosted
+    version: "25.1.42"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: fc61878342caee6da7979ca0ca9bb178f1eb5ca9b836dada34b83caa39e4bfed
+      url: "https://pub.dev"
+    source: hosted
+    version: "25.1.42"
+  syncfusion_flutter_datepicker:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_datepicker
+      sha256: "90398b38bceedc34575823ea27d6a1927934852ff2de8f1c1326e35d5b186b58"
+      url: "https://pub.dev"
+    source: hosted
+    version: "25.1.42"
+  table_calendar:
+    dependency: "direct main"
+    description:
+      name: table_calendar
+      sha256: b759eb6caa88dda8e51c70ee43c19d1682f8244458f84cced9138ee35b2ce416
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
   term_glyph:
     dependency: transitive
     description:
@@ -264,6 +352,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
+  timezone:
+    dependency: transitive
+    description:
+      name: timezone
+      sha256: "1cfd8ddc2d1cfd836bc93e67b9be88c3adaeca6f40a00ca999104c30693cdca0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.9.2"
   typed_data:
     dependency: transitive
     description:
@@ -306,4 +402,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.2.4 <4.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=2.2.1"

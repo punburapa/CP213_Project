@@ -8,10 +8,15 @@ environment:
 
 dependencies:
   circular_countdown_timer: ^0.2.3
+  date_count_down: ^3.0.0
   flutter:
     sdk: flutter
+  flutter_event_calendar: ^1.0.0
   flutter_timer_countdown: ^1.0.7
+  icalendar_parser: ^2.0.0
   rflutter_alert: ^2.0.7
+  syncfusion_flutter_calendar: ^25.1.42
+  table_calendar: ^3.1.1
 
 dev_dependencies:
   flutter_test:
@@ -27,3 +32,5 @@ flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/img/
