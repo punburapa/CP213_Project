@@ -1,6 +1,7 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
+
 import 'package:test2/clock.dart';
 import 'supasit.dart';
 
@@ -32,7 +33,7 @@ class homePage extends StatefulWidget {
 class _HomePageState extends State<homePage> {
   int currentIndex = 0;
   List widgetOptions = [
-    const Text('ปฏิทิน'),
+    const Text(''),
     const supasit(),
     const bodsuad(),
     clock()
